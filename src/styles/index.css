@@ -10,3 +10,85 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
+.container{
+    border-width: px;
+    border-color: blanchedalmond;
+    border-style: groove;
+    background-color: rgb(255, 248, 238);
+    text-align: center;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.list-container{
+
+    justify-content: center;
+    color: rgb(146, 104, 49);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+}
+
+.list-fields{
+    padding: 8px;
+    background-color: rgb(255, 248, 238);
+}
+
+
+h1{
+    background-color:white;
+    color: rgb(226, 181, 122);
+    text-align: center;
+    padding: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h6{
+    
+    margin-left: 20px;
+    text-align: left;
+    font-size: small;
+    color: rgb(160, 143, 117);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: 10px;
+}
+
+input{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+input, textarea{
+    background-color: antiquewhite;
+    width: 40%;
+}
+
+ul{
+    list-style: none;
+    background-color: rgb(255, 248, 238);
+}
+
+.Submit-button{
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    border: none;
+    color: black;
+    margin-left: 5px;
+    font-weight: 10;
+
+}
+
+
+
+.Remove-button{
+    padding: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 0px;
+    margin-left: 300px;
+    float: right;
+    border: none;
+    color: rgb(226, 181, 122);
+    font-size: small;
+
+}

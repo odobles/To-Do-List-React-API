@@ -1,26 +1,62 @@
 import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import { useState } from "react";
 
 //create your first component
-const Home = () => {
+const toDoList = () => {
+
+	const [input, setInput] = useState("");
+	const [itemsList, setItemsList] = useState([])
+
+	const addItem = () => {
+
+		if (!input){
+			alert("Input cannot be empty")
+			return;
+		}
+		
+		const item ={
+			id: Math.floor(Math.random()*1000),
+			value: input
+		};
+
+		setItemsList(oldList => [...oldList, item])
+		setInput("");
+	}
+
+	const deleteItem = (id) => {
+		const sortedList = itemsList.filter(element => element.id !== id)
+		setItemsList(sortedList)
+
+	}
+
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+		<form >
+			<h1>My To-Do List </h1>
+			<div className="container">
+				<input 
+					type="text" 
+					placeholder="What are you doing today?"
+					onChange={e => setInput(e.target.value)} 
+					value={input}>	
+				</input>
+				<button className="Submit-button" type="button" onClick={addItem}><strong>Submit</strong></button>
+				<div className="list-container">
+					<ul>
+						{itemsList.map(item => {
+							return(
+								<div className="list-fields">
+									<li key={item.id}>{item.value}<button className="Remove-button btn btn-outline-basic list-style-none" type="button" onClick={() => deleteItem(item.id)}> Remove Item </button></li>
+								<hr />
+								</div>
+							)
+						})}
+					</ul>
+					
+				</div>
+				<h6>{itemsList.length} item(s)</h6>
+			</div>
+		</form>
+	)
 };
 
-export default Home;
+export default toDoList;
